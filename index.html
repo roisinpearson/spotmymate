@@ -33,6 +33,8 @@
 
 <h3>Click the button to get your coordinates.</h3>
 
+<input id="username" type="text" placeholder="enter your name">
+        
 <button onclick="getLocation()">Try It</button>
 
 <p id="demo"></p>
@@ -51,12 +53,21 @@ function getLocation() {
 function showPosition(position) {
     x.innerHTML="Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
-    users.set({
-       roisin: {
-        lat: position.coords.latitude,
-        lon: position.coords.longitude
-       }
-    });
+    
+    // Get user name
+    var username = document.getElementById('username').value;
+    console.log(username);
+    
+    // Create the data object
+    var data = {};
+    
+    // Set the users data
+    data[username] = {};
+    data[username]["lat"] = position.coords.latitude;
+    data[username]["lon"] = position.coords.longitude;
+    
+    // Send to FireBase
+    users.update(data);
 }
 </script>
 
