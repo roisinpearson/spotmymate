@@ -39,7 +39,8 @@
 <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
 <script>
 var x = document.getElementById("demo");
-var fblocation = new Firebase('https://luminous-torch-8142.firebaseio.com/');
+var fblocation = new Firebase('https://spotmymmate.firebaseio.com/');
+var users = fb.location.child("users");
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
@@ -50,10 +51,11 @@ function getLocation() {
 function showPosition(position) {
     x.innerHTML="Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
-    fblocation.set({
-      name: "roisin",
+    users.set({
+       roisin: {
         lat: position.coords.latitude,
         lon: position.coords.longitude
+       }
     });
 }
 </script>
