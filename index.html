@@ -40,7 +40,7 @@
 <script>
 var x = document.getElementById("demo");
 var fblocation = new Firebase('https://spotmymmate.firebaseio.com/');
-var users = fb.location.child("users");
+var users = fblocation.child("users");
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
