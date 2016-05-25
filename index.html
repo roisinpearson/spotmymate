@@ -68,7 +68,8 @@ function showPosition(position) {
     data[username]["lon"] = position.coords.longitude;
     
     // Send to FireBase
-    users.push({data});
+  
+    setTimeout(function() {users.push({data})}, 3000) ;
 }
 </script>
 
