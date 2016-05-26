@@ -44,29 +44,48 @@
 var x = document.getElementById("demo");
 var fblocation = new Firebase('https://spotmymmate.firebaseio.com/');
 var users = fblocation.child("users");
+
+var latitude = 0;
+var longitude = 0;
+var username = '';
+var saved = false;
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
     } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";}
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      
     }
+}
     
 function showPosition(position) {
     x.innerHTML="Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
     
     // Get user name
-    var username = document.getElementById('username').value;
+    username = document.getElementById('username').value;
     console.log(username);
     
-    // Send to FireBase
-    users.push({
-      name: username,
-      lat: position.coords.latitude,
-      lon: position.coords.longitude
-    });
+    // Get lat and lon
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+    
+    if (!saved) {
+      saved();
+      saved = true;
+    }
+}
+
+function save() {
+  // Send to FireBase
+  users.push({
+    name: username,
+    lat: latitude,
+    lon: longitude
+  });
   
-    setTimeout(getLocation, 15000) ;
+  setTimeout(save, 15000);
 }
 </script>
 
