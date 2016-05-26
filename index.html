@@ -60,7 +60,7 @@ function showPosition(position) {
     console.log(username);
     
     // Send to FireBase
-    users.update({
+    users.push({
       name: username,
       lat: position.coords.latitude,
       lon: position.coords.longitude
