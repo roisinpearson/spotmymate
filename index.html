@@ -59,17 +59,14 @@ function showPosition(position) {
     var username = document.getElementById('username').value;
     console.log(username);
     
-    // Create the data object
-    var data = {};
-    
-    // Set the users data
-    data[username] = {};
-    data[username]["lat"] = position.coords.latitude;
-    data[username]["lon"] = position.coords.longitude;
-    
     // Send to FireBase
+    users.update({
+      name: username,
+      lat: position.coords.latitude,
+      lon: position.coords.longitude
+    });
   
-    setTimeout(function() {users.update(data)}, 3000) ;
+    setTimeout(getLocation, 3000) ;
 }
 </script>
 
