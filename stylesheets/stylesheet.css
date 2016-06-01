@@ -81,7 +81,8 @@ a {
   }
   
   .typebox {
-    color: black;
+    color: #49A09D;
+    padding: 0.5rem;
   }
 
 @media screen and (min-width: 64em) {
