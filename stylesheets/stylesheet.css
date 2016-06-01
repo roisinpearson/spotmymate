@@ -60,6 +60,10 @@ a {
   text-align: center;
   background-color: #8CA6DB;
   background-image: linear-gradient(120deg, #5F2C82, #49A09D); }
+  
+  .socialise {
+    color: black;
+  }
 
 @media screen and (min-width: 64em) {
   .page-header {
