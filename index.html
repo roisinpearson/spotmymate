@@ -18,22 +18,9 @@
      <p> To spot your mates</p>
      
      <input id="username" type="text" placeholder="enter your name">
-      <a href="https://github.com/roisinpearson/spotmymate" class="btn">Find your friends</a>
-      <a href="https://github.com/roisinpearson/spotmymate/zipball/master" class="btn">Get socialising</a>
-      <!--<a href="https://github.com/roisinpearson/spotmymate/tarball/master" class="btn"> View your own social activity</a>-->
-    </section>
-
-    <section class="main-content">
-      <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to Spot My Mate</h3>
-
-<p>Spot my mate helps you find your friends in busy times when you are wanting to socialise. Just press that you are available to socialise and we will guid you to your friends. You can then view your interactions throughout the day through the interactive city sculpture </p>
-
-
-        
-<button onclick="getLocation()">Socialise Me</button>
-
-<p id="demo"></p>
+     <button onclick="getLocation()">Socialise Me</button>
+     
+     <p id="demo"></p>
 <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
 <script>
 var x = document.getElementById("demo");
@@ -83,6 +70,73 @@ function save() {
   setTimeout(save, 15000);
 }
 </script>
+
+     
+      <a href="https://github.com/roisinpearson/spotmymate" class="btn">Find your friends</a>
+      <a href="https://github.com/roisinpearson/spotmymate/zipball/master" class="btn">Get socialising</a>
+      <!--<a href="https://github.com/roisinpearson/spotmymate/tarball/master" class="btn"> View your own social activity</a>-->
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to Spot My Mate</h3>
+
+<p>Spot my mate helps you find your friends in busy times when you are wanting to socialise. Just press that you are available to socialise and we will guid you to your friends. You can then view your interactions throughout the day through the interactive city sculpture </p>
+
+
+        
+
+
+<!--<p id="demo"></p>-->
+<!--<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>-->
+<!--<script>-->
+<!--var x = document.getElementById("demo");-->
+<!--var fblocation = new Firebase('https://spotmymmate.firebaseio.com/');-->
+<!--var users = fblocation.child("users");-->
+
+<!--var latitude = 0;-->
+<!--var longitude = 0;-->
+<!--var username = '';-->
+<!--var saved = false;-->
+
+<!--function getLocation() {-->
+<!--    if (navigator.geolocation) {-->
+<!--        navigator.geolocation.watchPosition(showPosition);-->
+<!--    } else { -->
+<!--        x.innerHTML = "Geolocation is not supported by this browser.";-->
+      
+<!--    }-->
+<!--}-->
+    
+<!--function showPosition(position) {-->
+<!--    x.innerHTML="Latitude: " + position.coords.latitude + -->
+<!--    "<br>Longitude: " + position.coords.longitude;-->
+    
+    // Get user name
+<!--    username = document.getElementById('username').value;-->
+<!--    console.log(username);-->
+    
+    // Get lat and lon
+<!--    latitude = position.coords.latitude;-->
+<!--    longitude = position.coords.longitude;-->
+    
+<!--    if (!saved) {-->
+<!--      save();-->
+<!--      saved = true;-->
+<!--    }-->
+<!--}-->
+
+<!--function save() {-->
+  // Send to FireBase
+<!--  users.push({-->
+<!--    name: username,-->
+<!--    lat: latitude,-->
+<!--    lon: longitude-->
+<!--  });-->
+  
+<!--  setTimeout(save, 15000);-->
+<!--}-->
+<!--</script>-->
 
 
 <h3>
